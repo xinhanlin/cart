@@ -2,14 +2,10 @@
   <div class="main">
     <div class="content">
       <button>
-        <router-link to="/"
-          >我&nbsp;&nbsp;的&nbsp;&nbsp;購&nbsp;&nbsp;物&nbsp;&nbsp;車</router-link
-        >
+        <router-link to="/">我的購物車</router-link>
       </button>
       <button>
-        <router-link to="/nopay"
-          >下&nbsp;次&nbsp;在&nbsp;買&nbsp;清&nbsp;單</router-link
-        >
+        <router-link to="/nopay">下次在買清單</router-link>
       </button>
     </div>
     <router-view></router-view>
@@ -32,7 +28,6 @@
   justify-content: left;
 }
 .content button {
-  width: 200px;
   height: 60px;
   display: block;
   margin-left: 0.8px;
@@ -50,18 +45,18 @@
   color: blue;
   font-size: 20px;
 }
-button {
-  position: relative;
+button a {
+  display: flex;
+  align-items: center;
+  padding: 0 1.2rem;
+  height: 100%;
 }
 .is-active {
-  width: 197px;
-  height: 58px;
-  display: block;
-  position: absolute;
+  /* position: absolute;
   top: 0px;
-  left: 0px;
+  left: 0px; */
   border-radius: 10px 10px 0px 0px;
-  line-height: 58px;
+  /* line-height: 58px; */
   background-color: turquoise;
 }
 </style>

@@ -12,16 +12,14 @@
       </div>
 
       <router-link replace to="/finish" @click="checkout" class="gotobuy">
-        <span
-          >結&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;帳</span
-        ></router-link
-      >
+        <span>結帳</span>
+      </router-link>
     </div>
   </div>
 </template>
 <script>
-import { useStore } from "vuex";
-import { computed } from "vue";
+import { useStore } from 'vuex';
+import { computed } from 'vue';
 export default {
   setup() {
     const store = useStore();
