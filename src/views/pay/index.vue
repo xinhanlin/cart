@@ -92,11 +92,11 @@
   </div>
 </template>
 <script>
-import { useStore } from "vuex";
-import { reactive, toRefs, computed, watch } from "vue";
-import Header from "../../components/content.vue";
-import Content from "../../components/header.vue";
-import Bottom from "./bottom.vue";
+import { useStore } from 'vuex';
+import { reactive, toRefs, computed, watch } from 'vue';
+import Header from '../../components/content.vue';
+import Content from '../../components/header.vue';
+import Bottom from './bottom.vue';
 
 export default {
   components: {
@@ -142,10 +142,10 @@ export default {
     // });
 
     const removepay = (item) => {
-      store.commit("removepay", item);
+      store.commit('removepay', item);
     };
     const nopay = (item) => {
-      store.commit("nopay", item);
+      store.commit('nopay', item);
     };
 
     return {
@@ -199,29 +199,53 @@ export default {
   margin: 0 auto 20px auto;
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
   padding: 20px 0px;
   border-top: 2px solid black;
   border-bottom: 2px solid black;
   text-align: center;
 }
+/* 600以下適用 */
+@media (max-width: 600px) {
+  .topwrapper,
+  .itemwrapper {
+    flex-wrap: wrap;
+  }
+
+  .a,
+  .b,
+  .c,
+  .itemdetailwrapper,
+  .pricewrapper,
+  .countwrapper {
+    flex-basis: 33%;
+  }
+
+  .d,
+  .e,
+  .totalpricewrapper,
+  .changeitemwrapper {
+    flex-basis: 50%;
+  }
+}
+
 .topwrapper .a {
-  flex: 2;
+  flex-grow: 2;
 }
 .topwrapper .b {
-  flex: 1;
+  flex-grow: 1;
 }
 .topwrapper .c {
-  flex: 1;
+  flex-grow: 1;
 }
 .topwrapper .d {
-  flex: 1;
+  flex-grow: 1;
 }
 .topwrapper .e {
-  flex: 1;
+  flex-grow: 1;
 }
 
 .itemwrapper {
-  height: 100px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -229,6 +253,7 @@ export default {
   text-align: center;
   padding: 40px 0px 40px 0px;
   border-bottom: 2px solid yellowgreen;
+  /* flex-wrap: nowrap; */
 }
 .itemwrapper:last-child {
   border-bottom: 2px solid black;
@@ -236,18 +261,20 @@ export default {
 /* 商品詳情 */
 
 .itemdetailwrapper {
-  flex: 2;
+  flex-grow: 2;
   overflow: hidden;
   display: flex;
   align-items: flex-end;
+  min-width: 20rem;
+  flex-wrap: wrap;
 }
 .itemdetailwrapper .check {
-  flex: 0.2;
+  flex-grow: 0.2;
   line-height: 70px;
   margin-right: 3px;
 }
 .imgwrapper {
-  flex: 3;
+  flex-grow: 3;
 }
 .itemdetailwrapper img {
   height: 80px;
@@ -265,7 +292,7 @@ export default {
   cursor: pointer;
 }
 .itemdetailwrapper .itemname {
-  flex: 3;
+  flex-grow: 3;
 
   line-height: 20px;
   height: 80px;
@@ -274,19 +301,19 @@ export default {
 
 /* 價格 */
 .pricewrapper {
-  flex: 1;
+  flex-grow: 1;
 }
 /* 數量 */
 .countwrapper {
-  flex: 1;
+  flex-grow: 1;
 }
 /* 單一項目總價格 */
 .totalpricewrapper {
-  flex: 1;
+  flex-grow: 1;
 }
 /* 變更 */
 .changeitemwrapper {
-  flex: 1;
+  flex-grow: 1;
 }
 .changeitemwrapper > button {
   display: block;

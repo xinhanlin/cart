@@ -6,9 +6,7 @@
 
     <div class="cartwrapper">
       <div class="allcheckboxwrapper innerwrapper">
-        <h2 class="check">
-          下&nbsp;&nbsp;次&nbsp;&nbsp;再&nbsp;&nbsp;買&nbsp;&nbsp;清&nbsp;&nbsp;單
-        </h2>
+        <h2 class="check">下次再買清單</h2>
       </div>
 
       <div class="innerwrapper">
@@ -82,9 +80,7 @@
           </div>
         </div>
         <div v-else class="itemwrapper noitem">
-          <span
-            >尚&nbsp;&nbsp;未&nbsp;&nbsp;有&nbsp;&nbsp;任&nbsp;&nbsp;何&nbsp;&nbsp;商&nbsp;&nbsp;品</span
-          >
+          <span>尚未有任何商品</span>
         </div>
       </div>
       <Bottom></Bottom>
@@ -92,11 +88,11 @@
   </div>
 </template>
 <script>
-import { useStore } from "vuex";
-import { reactive, toRefs, computed, watch, ref } from "vue";
-import Header from "../../components/content.vue";
-import Content from "../../components/header.vue";
-import Bottom from "./bottom.vue";
+import { useStore } from 'vuex';
+import { reactive, toRefs, computed, watch, ref } from 'vue';
+import Header from '../../components/content.vue';
+import Content from '../../components/header.vue';
+import Bottom from './bottom.vue';
 
 export default {
   components: {
@@ -143,11 +139,11 @@ export default {
     });
     //刪除商品
     const removenopay = (no) => {
-      store.commit("removenopay", no);
+      store.commit('removenopay', no);
     };
     //添加回購物車
     const addcart = (no) => {
-      store.commit("addcart", no);
+      store.commit('addcart', no);
     };
     //整批放回購物車
 
