@@ -37,10 +37,8 @@
               />
             </div> -->
             <div class="imgwrapper">
-              <img
-                class="img"
-                src="https://www.shutterstock.com/image-photo/amazing-beach-sunset-endless-horizon-600w-746217742.jpg"
-              />
+              <img class="img" :src="item.href" />
+
               <button class="detail">詳情</button>
             </div>
             <div class="itemname">

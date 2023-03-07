@@ -78,7 +78,7 @@
           <!--項目變更-->
           <div class="changeitemwrapper">
             <button @click="nopay(item.no)" class="upper">
-              <span>下次在購買</span>
+              <span>加入下次再買</span>
             </button>
             <button @click="removepay(item.no)" class="button">
               <span>刪除商品</span>
@@ -226,6 +226,10 @@ export default {
   .totalpricewrapper,
   .changeitemwrapper {
     flex-basis: 50%;
+  }
+  .itemdetailwrapper .detail:hover {
+    color: black;
+    cursor: pointer;
   }
 }
 
