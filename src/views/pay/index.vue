@@ -57,7 +57,7 @@
             </div>
           </div>
           <!--價格-->
-          <div class="pricewrapper">$&nbsp;{{ item.price }}</div>
+          <div class="pricewrapper">價格:$&nbsp;{{ item.price }}</div>
           <!--數量-->
           <div class="countwrapper">
             <div>
