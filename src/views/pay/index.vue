@@ -22,7 +22,10 @@
 
       <div class="innerwrapper">
         <!--item項目-->
-        <div class="allcheckboxwrapper innerwrapper">
+        <div
+          class="allcheckboxwrapper innerwrapper"
+          v-if="$store.state.cart.length != 0"
+        >
           <input
             style="zoom: 150%"
             type="checkbox"
