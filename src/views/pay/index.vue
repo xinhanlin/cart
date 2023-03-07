@@ -72,7 +72,7 @@
           <!--單一項目總價格-->
           <div class="totalpricewrapper">
             <div>
-              <span>$&nbsp;{{ item.price * item.num }}</span>
+              <span>小計:$&nbsp;{{ item.price * item.num }}</span>
             </div>
           </div>
           <!--項目變更-->
