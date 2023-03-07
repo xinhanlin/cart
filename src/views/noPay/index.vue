@@ -306,7 +306,7 @@ export default {
 /**未添加商品內容區**/
 .noitem {
   height: 200px;
-  font-size: 40px;
+  font-size: 20px;
   color: brown;
   font-weight: bold;
 }
