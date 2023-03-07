@@ -163,6 +163,7 @@ export default {
 .allcheckboxwrapper {
   font-weight: bold;
   font-size: 15px;
+  text-align: center;
 }
 
 /* 訂單確認標題 */
