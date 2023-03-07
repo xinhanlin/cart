@@ -74,6 +74,7 @@ export default {
 
   font-size: 50px;
   color: blue;
+  text-anchor: center;
 }
 .cartwrapper {
   width: 90%;
