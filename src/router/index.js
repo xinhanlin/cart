@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import checkout from "../views/checkout/index.vue";
+import finish from "../views/finish/index.vue";
 const router = createRouter({
   //模式
   history: createWebHashHistory(),
@@ -20,7 +21,7 @@ const router = createRouter({
     },
     {
       path: "/finish",
-      component: () => import("../views/finish/index.vue"),
+      component: finish,
     },
   ],
 });
