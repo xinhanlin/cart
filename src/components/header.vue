@@ -71,6 +71,7 @@ h2 {
   font-size: 50px;
   color: blue;
   display: block;
+  padding: 20px 70px 20px 70px;
 }
 
 /* 600以下適用 */
