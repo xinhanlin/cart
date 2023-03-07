@@ -1,15 +1,15 @@
 <template>
   <div class="wrapper">
     <div class="main">
-      <div class="left-content" style="margin-left: 50px">
-        <div class="icon">
-          <RouterLink to="/"
-            ><!--<img src="../../img/s.jpg" style="width: 112px" /> -->
+      <!-- <div class="left-content"> -->
+      <!-- <div class="icon"> -->
+      <!-- <RouterLink to="/" 
+        >--><!--<img src="../../img/s.jpg" style="width: 112px" /> -->
 
-            <h2>購物網</h2>
-          </RouterLink>
-        </div>
-      </div>
+      <h2>購物網</h2>
+      <!--</RouterLink>-->
+      <!-- </div> -->
+      <!-- </div> -->
       <!-- <div class="right-content">
         <h1>會員登入(未開發)</h1>
       </div> -->
@@ -63,19 +63,25 @@ export default {
   width: 90%;
   margin: 30px auto;
   padding-bottom: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+
   border-bottom: 2px solid yellowgreen;
 }
 
-.icon h2 {
-  margin-left: 10px;
-
+h2 {
   font-size: 50px;
   color: blue;
-  text-anchor: center;
+  display: block;
 }
+
+/* 600以下適用 */
+@media (max-width: 600px) {
+  h2 {
+    text-align: center;
+    display: block;
+    margin: auto;
+  }
+}
+
 .cartwrapper {
   width: 90%;
   border: 2px solid black;

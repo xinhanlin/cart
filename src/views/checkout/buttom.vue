@@ -18,8 +18,8 @@
   </div>
 </template>
 <script>
-import { useStore } from 'vuex';
-import { computed } from 'vue';
+import { useStore } from "vuex";
+import { computed } from "vue";
 export default {
   setup() {
     const store = useStore();
