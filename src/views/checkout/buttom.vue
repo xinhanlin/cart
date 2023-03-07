@@ -2,9 +2,9 @@
   <!--結帳-->
   <div class="innerwrapper">
     <div class="leftbottom">
-      <!-- <router-link replace to="/">
+      <router-link replace to="/">
         <span style="color: red">加購-返回購物車</span></router-link
-      > -->
+      >
     </div>
     <div class="bottomwrapper">
       <div class="bottomprice">
