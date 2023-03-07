@@ -36,7 +36,7 @@ export default {
   border-radius: 5px;
 }
 .innerwrapper {
-  margin: auto;
+  margin: 100px auto;
   text-align: center;
 }
 .middle {
