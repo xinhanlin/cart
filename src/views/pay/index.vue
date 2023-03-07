@@ -92,11 +92,11 @@
   </div>
 </template>
 <script>
-import { useStore } from 'vuex';
-import { reactive, toRefs, computed, watch } from 'vue';
-import Header from '../../components/content.vue';
-import Content from '../../components/header.vue';
-import Bottom from './bottom.vue';
+import { useStore } from "vuex";
+import { reactive, toRefs } from "vue";
+import Header from "../../components/content.vue";
+import Content from "../../components/header.vue";
+import Bottom from "./bottom.vue";
 
 export default {
   components: {
@@ -142,10 +142,10 @@ export default {
     // });
 
     const removepay = (item) => {
-      store.commit('removepay', item);
+      store.commit("removepay", item);
     };
     const nopay = (item) => {
-      store.commit('nopay', item);
+      store.commit("nopay", item);
     };
 
     return {

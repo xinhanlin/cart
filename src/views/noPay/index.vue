@@ -88,11 +88,11 @@
   </div>
 </template>
 <script>
-import { useStore } from 'vuex';
-import { reactive, toRefs, computed, watch, ref } from 'vue';
-import Header from '../../components/content.vue';
-import Content from '../../components/header.vue';
-import Bottom from './bottom.vue';
+import { useStore } from "vuex";
+import { reactive, toRefs, computed, ref } from "vue";
+import Header from "../../components/content.vue";
+import Content from "../../components/header.vue";
+import Bottom from "./bottom.vue";
 
 export default {
   components: {
@@ -139,11 +139,11 @@ export default {
     });
     //刪除商品
     const removenopay = (no) => {
-      store.commit('removenopay', no);
+      store.commit("removenopay", no);
     };
     //添加回購物車
     const addcart = (no) => {
-      store.commit('addcart', no);
+      store.commit("addcart", no);
     };
     //整批放回購物車
 
@@ -229,12 +229,23 @@ export default {
   border-bottom: 2px solid black;
 }
 /* 商品詳情 */
-
+@media (max-width: 600px) {
+  .itemdetailwrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .itemdetailwrapper .itemname {
+    flex: 1;
+    font-size: 15px;
+    margin-top: 10px;
+  }
+}
 .itemdetailwrapper {
   flex: 1;
-  overflow: hidden;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 }
 .itemdetailwrapper .check {
   flex: 0.2;
@@ -260,11 +271,9 @@ export default {
   cursor: pointer;
 }
 .itemdetailwrapper .itemname {
-  flex: 3;
+  flex: 1;
 
-  line-height: 20px;
-  height: 80px;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 /* 價格 */

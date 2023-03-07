@@ -2,11 +2,11 @@
   <div class="wrapper">
     <div class="main">
       <div class="left-content" style="margin-left: 50px">
-        <div class="icon" style="width: 112px">
+        <div class="icon">
           <RouterLink to="/"
-            ><img src="../../img/s.jpg" style="width: 112px" />
+            ><!--<img src="../../img/s.jpg" style="width: 112px" /> -->
 
-            <h2 style="width: 75px; margin: 0px auto">購物網</h2>
+            <h2>購物網</h2>
           </RouterLink>
         </div>
       </div>
@@ -69,15 +69,11 @@ export default {
   border-bottom: 2px solid yellowgreen;
 }
 
-.icon {
-  display: flex;
-  flex-direction: row;
-}
-img {
-  width: 50px;
-}
 .icon h2 {
   margin-left: 10px;
+
+  font-size: 50px;
+  color: blue;
 }
 .cartwrapper {
   width: 90%;

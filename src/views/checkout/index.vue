@@ -144,7 +144,6 @@ export default {
   },
 };
 </script>
-
 <style scoped>
 .cartContentWrapper {
   width: 100%;
@@ -165,11 +164,13 @@ export default {
   font-weight: bold;
   font-size: 15px;
 }
+
 /* 訂單確認標題 */
 .check {
+  width: 400px;
+  margin: 20px auto 20px;
   text-align: center;
   color: blue;
-  margin: 20px auto 20px;
 }
 .checkbox {
   margin: 30px auto;
@@ -185,7 +186,7 @@ export default {
   text-align: center;
 }
 .topwrapper .a {
-  flex: 2;
+  flex: 1;
 }
 .topwrapper .b {
   flex: 1;
@@ -196,28 +197,41 @@ export default {
 .topwrapper .d {
   flex: 1;
 }
-.topwrapper .e {
+/* .topwrapper .e {
   flex: 1;
-}
-.topwrapper + .itemwrapper {
-  border-top: 2px solid yellowgreen;
-}
+} */
+
 .itemwrapper {
   height: 100px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-top: 20px;
   text-align: center;
   padding: 40px 0px 40px 0px;
   border-bottom: 2px solid yellowgreen;
 }
+.itemwrapper:last-child {
+  border-bottom: 2px solid black;
+}
 /* 商品詳情 */
-
+@media (max-width: 600px) {
+  .itemdetailwrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .itemdetailwrapper .itemname {
+    flex: 1;
+    font-size: 15px;
+    margin-top: 10px;
+  }
+}
 .itemdetailwrapper {
-  flex: 2;
-  overflow: hidden;
+  flex: 1;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 }
 .itemdetailwrapper .check {
   flex: 0.2;
@@ -243,11 +257,9 @@ export default {
   cursor: pointer;
 }
 .itemdetailwrapper .itemname {
-  flex: 3;
+  flex: 1;
 
-  line-height: 20px;
-  height: 80px;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 /* 價格 */
@@ -258,38 +270,39 @@ export default {
 .countwrapper {
   flex: 1;
 }
-/* 單一項目總價格 */
+/* 單一項目總價格  */
 .totalpricewrapper {
   flex: 1;
 }
-.bottomwrapper {
-  width: 250px;
-  float: right;
-  margin: 30px 0px 0px 30px;
-  overflow: hidden;
+/* 變更 */
+/* .changeitemwrapper {
+  flex: 1;
+} */
+.changeitemwrapper > button {
+  display: block;
+  margin: 5px auto 5px;
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 15px;
 }
-.bottomprice {
-  float: left;
-}
-
-.bottomprice span {
+.changeitemwrapper > button:hover {
   color: red;
-
-  font-size: 25px;
-  text-decoration: underline;
+  cursor: pointer;
 }
-.gotobuy {
-  float: right;
-  margin: 20px 0px 5px 0px;
-  padding: 20px;
-  background-color: blueviolet;
-
-  border-radius: 15px 0px 0px 0px;
-  border: 4px solid grey;
-}
-.gotobuy span {
-  color: aliceblue;
-  font-size: 25px;
+/**未添加商品內容區**/
+.noitem {
+  height: 200px;
+  font-size: 40px;
+  color: brown;
   font-weight: bold;
+}
+.noitem > span {
+  margin: auto;
+}
+.leftbottom {
+  position: absolute;
+  margin-top: 90px;
+  top: 0px;
+  font-size: 20px;
 }
 </style>

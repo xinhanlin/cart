@@ -43,7 +43,6 @@
 
 .content button a:hover {
   color: blue;
-  font-size: 20px;
 }
 button a {
   display: flex;

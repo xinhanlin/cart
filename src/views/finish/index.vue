@@ -2,12 +2,9 @@
   <Header></Header>
 
   <div class="cartwrapper">
-    <div class="innerwrapper" style="margin-bottom: 400px">
+    <div class="innerwrapper">
       <div class="middle">
-        <br />
-        <div>謝謝您的購買</div>
-        <br />
-        <img src="../../../img/s.jpg" style="width: 100px" />
+        <div class="finish">訂單已完成</div>
 
         <router-link
           replace
@@ -25,12 +22,8 @@
   </div>
 </template>
 <script>
-import { useStore } from "vuex";
-
 export default {
-  setup() {
-    const store = useStore();
-  },
+  setup() {},
 };
 </script>
 
@@ -43,12 +36,16 @@ export default {
   border-radius: 5px;
 }
 .innerwrapper {
-  width: 95%;
   margin: auto;
   text-align: center;
 }
 .middle {
-  width: 560px;
   margin: auto;
+}
+.finish {
+  margin-top: 30px;
+}
+h2 {
+  margin-bottom: 20px;
 }
 </style>

@@ -1,9 +1,9 @@
 <template>
   <!--結帳-->
   <div class="innerwrapper">
-    <div class="leftbottom" v-if="$store.state.cart.length == 0">
+    <!-- <div class="leftbottom" v-if="$store.state.cart.length == 0">
       <a href="javascript:;" style="color: red">前去添加商品(尚未開發)</a>
-    </div>
+    </div> -->
     <div class="bottomwrapper">
       <div class="bottomprice">
         <span>總&nbsp;價&nbsp;格:&nbsp;{{ all_price }}</span>
