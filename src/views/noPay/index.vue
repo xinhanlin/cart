@@ -182,7 +182,6 @@ export default {
 
 /* 訂單確認標題 */
 .check {
-  width: 400px;
   margin: 20px auto 20px;
   text-align: center;
   color: blue;
