@@ -66,7 +66,7 @@
             <div>
               數量:<van-stepper
                 v-model="item.num"
-                min="0"
+                min="1"
                 max="999"
                 style="border: 1px solid black"
               />

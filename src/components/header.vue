@@ -1,19 +1,7 @@
 <template>
+  <storeHeader></storeHeader>
   <div class="wrapper">
-    <div class="main">
-      <!-- <div class="left-content"> -->
-      <!-- <div class="icon"> -->
-      <!-- <RouterLink to="/" 
-        >--><!--<img src="../../img/s.jpg" style="width: 112px" /> -->
-
-      <h2>購物網</h2>
-      <!--</RouterLink>-->
-      <!-- </div> -->
-      <!-- </div> -->
-      <!-- <div class="right-content">
-        <h1>會員登入(未開發)</h1>
-      </div> -->
-    </div>
+    <div class="main"></div>
 
     <!-- steps步驟條 -->
     <div class="cartwrapper">
@@ -26,9 +14,14 @@
   </div>
 </template>
 <script>
+import storeHeader from "../components/storeHeader.vue";
 import { ref } from "vue";
 import { useRoute } from "vue-router";
+
 export default {
+  components: {
+    storeHeader,
+  },
   setup() {
     const route = useRoute();
     let active = ref(0);

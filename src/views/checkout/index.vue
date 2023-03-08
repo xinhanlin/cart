@@ -1,6 +1,5 @@
 <template>
   <Header></Header>
-
   <div class="cartContentWrapper">
     <!--板心-->
 
@@ -76,9 +75,9 @@
 </template>
 <script>
 import { useStore } from "vuex";
-import { reactive, toRefs, computed, watch, onUpdated } from "vue";
-import Header from "../../components/content.vue";
-import Content from "../../components/header.vue";
+import { reactive, toRefs, computed, onUpdated } from "vue";
+import Content from "../../components/content.vue";
+import Header from "../../components/header.vue";
 import Bottom from "./buttom.vue";
 
 export default {

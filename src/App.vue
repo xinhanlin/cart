@@ -1,7 +1,8 @@
 <template>
-  <div style="padding-bottom: 6rem">
+  <div style="background-color: beige">
     <router-view></router-view>
   </div>
+  <div></div>
 </template>
 <script></script>
 <style>
@@ -122,7 +123,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {

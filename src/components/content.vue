@@ -2,10 +2,10 @@
   <div class="main">
     <div class="content">
       <button>
-        <router-link to="/">我的購物車</router-link>
+        <router-link to="/pay">訂購單</router-link>
       </button>
       <button>
-        <router-link to="/nopay">下次在買清單</router-link>
+        <router-link to="/nopay">下次再買清單</router-link>
       </button>
     </div>
     <router-view></router-view>

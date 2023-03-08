@@ -1,21 +1,21 @@
 <template>
   <Header></Header>
-
   <div class="cartwrapper">
     <div class="innerwrapper">
       <div class="middle">
-        <div class="finish">訂單已完成</div>
-
+        <div class="finish">訂單已完成,即刻為您製作</div>
+        <br />
+        <h2>有{{ $store.state.nopay.length }}項商品已經保存至會員中</h2>
         <router-link
-          replace
-          to="/"
+          to="/pay"
           style="display: block; margin: 20px 0px 20px 0px"
         >
-          <h2>我的購物車尚有{{ $store.state.cart.length }}項商品</h2>
-          <h2>下次在買清單尚有{{ $store.state.nopay.length }}項商品</h2>
           <span style="color: red; font-size: 20px"
-            >返回我的購物車</span
+            >返回我的購物單</span
           ></router-link
+        >
+        <router-link to="/" style="display: block; margin: 20px 0px 20px 0px">
+          <span style="color: red; font-size: 20px">返回首頁</span></router-link
         >
       </div>
     </div>

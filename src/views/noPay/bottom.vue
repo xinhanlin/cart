@@ -2,8 +2,8 @@
   <!--結帳-->
   <div class="innerwrapper">
     <div class="leftbottom">
-      <router-link replace to="/">
-        <span style="color: red">返回購物車</span></router-link
+      <router-link to="/pay">
+        <span style="color: red">訂購單</span></router-link
       >
     </div>
   </div>

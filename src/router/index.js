@@ -7,7 +7,7 @@ const router = createRouter({
   linkActiveClass: "is-active",
   routes: [
     {
-      path: "/",
+      path: "/pay",
       component: () => import("../views/pay/index.vue"),
     },
     {
@@ -22,6 +22,34 @@ const router = createRouter({
     {
       path: "/finish",
       component: finish,
+    },
+    {
+      path: "/",
+      component: () => import("../views/home/index.vue"),
+    },
+    {
+      path: "/drink",
+      component: () => import("../views/drink/index.vue"),
+    },
+    {
+      path: "/cake",
+      component: () => import("../views/cake/index.vue"),
+    },
+    {
+      path: "/about",
+      component: () => import("../views/about.vue"),
+    },
+
+    {
+      path: "/:no",
+      name: "itemdetail",
+      component: () => import("../views/itemDetail/index.vue"),
+    },
+
+    {
+      path: "/:domain(.*)*",
+      name: "NotFound",
+      component: import("../views/notFound.vue"),
     },
   ],
 });

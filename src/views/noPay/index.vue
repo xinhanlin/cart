@@ -72,7 +72,7 @@
 
           <div class="changeitemwrapper">
             <button @click="addcart(item.no)" class="upper">
-              <span>加入購物車</span>
+              <span>加回購物單</span>
             </button>
             <button @click="removenopay(item.no)" class="button">
               <span>刪除商品</span>
