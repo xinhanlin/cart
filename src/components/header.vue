@@ -1,5 +1,5 @@
 <template>
-  <storeHeader></storeHeader>
+  <storeHeader class="store-header"></storeHeader>
   <div class="wrapper">
     <div class="main"></div>
 
@@ -48,6 +48,12 @@ export default {
 </script>
 
 <style scoped>
+.store-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
 .wrapper {
   width: 100%;
 }

@@ -1,6 +1,7 @@
 import { createStore } from "vuex";
 export default createStore({
   state: {
+    num: 1,
     //購物明細
     data: {
       cake: [
@@ -116,7 +117,7 @@ export default createStore({
         },
         {
           id: 11,
-          no: 10,
+          no: 11,
           cartItem: "勃朗峰",
           href: "https://thumb.photo-ac.com/14/147e4ff9a79fb263d062b48f0a425912_w.jpeg",
           price: 222,
@@ -127,7 +128,7 @@ export default createStore({
         },
         {
           id: 12,
-          no: 11,
+          no: 12,
           cartItem: "薩赫托特",
           href: "https://thumb.photo-ac.com/dc/dc823449c2d69a153dfc389391845ee8_w.jpeg",
           price: 222,
@@ -138,7 +139,7 @@ export default createStore({
         },
         {
           id: 13,
-          no: 12,
+          no: 13,
           cartItem: "烤蘋果",
           href: "https://thumb.photo-ac.com/99/9961ad89391344ad61a4ee8afc480b61_w.jpeg",
           price: 222,
@@ -149,7 +150,7 @@ export default createStore({
         },
         {
           id: 14,
-          no: 13,
+          no: 14,
           cartItem: "鱷魚灌木叢",
           href: "https://thumb.photo-ac.com/47/478afd8bc8f92b3ab0aa7c5b42b368f2_w.jpeg",
           price: 222,
@@ -160,7 +161,7 @@ export default createStore({
         },
         {
           id: 15,
-          no: 14,
+          no: 15,
           cartItem: "蛋撻",
           href: "https://thumb.photo-ac.com/41/41cf317156bf8fe823345863ce095609_w.jpeg",
           price: 222,
@@ -171,7 +172,7 @@ export default createStore({
         },
         {
           id: 16,
-          no: 15,
+          no: 16,
           cartItem: "大蒙布朗",
           href: "https://thumb.photo-ac.com/85/85d22fe7d11e45932e152080231068ab_w.jpeg",
           price: 222,
@@ -357,7 +358,7 @@ export default createStore({
 
   getters: {
     //確認結帳的數據
-    checkout(state) {
+    checkout: function (state) {
       return state.cart.filter(
         (item) => (item.checked == true) & (item.num != 0)
       );
@@ -376,10 +377,8 @@ export default createStore({
     },
     adddrink(state, no) {
       state.data.drink.map(function (item) {
-        {
-          if (item.no == no) {
-            state.cart.push(item);
-          }
+        if (item.no == no) {
+          state.cart.push(item);
         }
       });
     },
@@ -390,21 +389,22 @@ export default createStore({
     nopay(state, no) {
       state.cart.map(function (item) {
         if (item.no == no) {
-          item.checked = false;
+          // item.checked = false;
           state.nopay.push(item);
         }
       });
-      state.cart = state.cart.filter((item) => item.no != no);
+      // state.cart = state.cart.filter((item) => item.no != no);
     },
-    //添加回購物清單
+    //添加至購物清單
     addcart(state, no) {
       state.nopay.map(function (item) {
         if (item.no == no) {
-          item.checked = false;
+          // item.checked = false;
           state.cart.push(item);
         }
       });
-      state.nopay = state.nopay.filter((item) => item.no != no);
+      //可以刪除商品,並加回購物單
+      // state.nopay = state.nopay.filter((item) => item.no != no);
     },
 
     //刪除nopay存儲數據
@@ -420,5 +420,71 @@ export default createStore({
     //   },
     // },
   },
-  actions: {},
+  actions: {
+    Nopay(context, no) {
+      if (context.state.nopay == false) {
+        context.commit("nopay", no);
+      } else {
+        var a = true;
+        for (let i = 0; i < context.state.nopay.length; i++) {
+          if (context.state.nopay[i].no == no) {
+            a = false;
+            alert("下次再買清單已經存儲相同商品");
+          }
+        }
+        if (a == true) {
+          context.commit("nopay", no);
+        }
+      }
+    },
+    Addcart(context, no) {
+      if (context.state.cart == false) {
+        context.commit("addcart", no);
+      } else {
+        var a = true;
+        for (let i = 0; i < context.state.cart.length; i++) {
+          if (context.state.cart[i].no == no) {
+            a = false;
+            alert("已經存放至我的下次購買清單");
+          }
+        }
+        if (a == true) {
+          context.commit("addcart", no);
+        }
+      }
+    },
+    Addcake(context, no) {
+      if (context.state.cart == false) {
+        context.commit("addcake", no);
+      } else {
+        var a = true;
+        for (let i = 0; i < context.state.cart.length; i++) {
+          if (context.state.cart[i].no == no) {
+            a = false;
+            alert("購物單已經存放相同商品");
+          }
+        }
+        if (a == true) {
+          context.commit("addcake", no);
+        }
+      }
+    },
+    Adddrink(context, no) {
+      console.log(context.state.cart);
+      if (context.state.cart == false) {
+        context.commit("adddrink", no);
+      } else {
+        var a = true;
+        for (let i = 0; i < context.state.cart.length; i++) {
+          if (context.state.cart[i].no == no) {
+            a = false;
+            alert("購物單已經存放相同商品");
+          }
+        }
+        if (a == true) {
+          context.commit("adddrink", no);
+        }
+      }
+    },
+  },
 });

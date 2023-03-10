@@ -81,7 +81,7 @@
           <!--項目變更-->
           <div class="changeitemwrapper">
             <button @click="nopay(item.no)" class="upper">
-              <span>加入下次再買</span>
+              <span>加入下次再買清單</span>
             </button>
             <button @click="removepay(item.no)" class="button">
               <span>刪除商品</span>
@@ -147,8 +147,9 @@ export default {
     const removepay = (item) => {
       store.commit("removepay", item);
     };
+    //訂購單加入我的下次再買清單
     const nopay = (item) => {
-      store.commit("nopay", item);
+      store.dispatch("Nopay", item);
     };
 
     return {
@@ -164,6 +165,7 @@ export default {
 <style scoped>
 .cartContentWrapper {
   width: 100%;
+  height: 100%;
   font-size: 15px;
 }
 .cartwrapper {
@@ -272,7 +274,7 @@ export default {
   overflow: hidden;
   display: flex;
   align-items: flex-end;
-  min-width: 20rem;
+  min-width: 20px;
   flex-wrap: wrap;
 }
 .itemdetailwrapper .check {
@@ -300,7 +302,7 @@ export default {
 }
 .itemdetailwrapper .itemname {
   flex-grow: 3;
-
+  flex-wrap: wrap;
   line-height: 20px;
   height: 80px;
   font-size: 20px;

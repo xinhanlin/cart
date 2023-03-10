@@ -3,11 +3,12 @@
   <imgHeaderContainer class="img-header-container"></imgHeaderContainer>
   <h1>堅持提供最好的茶飲,甜點</h1>
   <h1>堅守低糖,低熱量</h1>
-  <h1>高成本,低利潤回饋與長期支持的顧客</h1>
+  <h1>高品質,低利潤回饋與長期支持的顧客</h1>
   <!-- <div class="middle-container">
     <leftContainer class="left-container"></leftContainer>
     <rightContainer class="right-container"></rightContainer>
   </div> -->
+
   <storeBottom></storeBottom>
 </template>
 <script>
@@ -17,6 +18,7 @@ import imgHeaderContainer from "./imgHeaderContainer.vue";
 
 import storeHeader from "../../components/storeHeader.vue";
 import storeBottom from "../../components/storeBottom.vue";
+
 export default {
   name: "App",
   components: {
@@ -26,7 +28,6 @@ export default {
     storeHeader,
     storeBottom,
   },
-  setup() {},
 };
 </script>
 <style scoped>
@@ -42,11 +43,11 @@ export default {
   padding: 120px 0px 40px;
   margin: 0 auto;
 }
-.top-container {
+/* .top-container {
   background-color: aqua;
   margin: 50px;
   height: 200px;
-}
+} */
 /* .middle-container {
   flex-wrap: nowrap;
   display: flex;

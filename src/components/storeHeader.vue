@@ -18,7 +18,7 @@
   line-height: 60px;
   background-color: black;
   z-index: 1;
-  border-radius: 0px 0px 10px;
+
   color: aliceblue;
 }
 .middlewrapper {

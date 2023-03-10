@@ -1,11 +1,14 @@
 <template>
-  <div style="background-color: beige">
+  <div class="backgroud-color">
     <router-view></router-view>
   </div>
-  <div></div>
 </template>
 <script></script>
 <style>
+.backgroud-color {
+  background-image: linear-gradient(to top, beige, #0084ff);
+}
+
 html,
 body,
 div,

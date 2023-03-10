@@ -72,7 +72,7 @@
 
           <div class="changeitemwrapper">
             <button @click="addcart(item.no)" class="upper">
-              <span>加回購物單</span>
+              <span>加入購物單</span>
             </button>
             <button @click="removenopay(item.no)" class="button">
               <span>刪除商品</span>
@@ -143,7 +143,7 @@ export default {
     };
     //添加回購物車
     const addcart = (no) => {
-      store.commit("addcart", no);
+      store.dispatch("Addcart", no);
     };
     //整批放回購物車
 
@@ -161,6 +161,7 @@ export default {
 <style scoped>
 .cartContentWrapper {
   width: 100%;
+  height: 100%;
   font-size: 15px;
 }
 .cartwrapper {

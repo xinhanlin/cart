@@ -32,9 +32,13 @@ export default {
   left: 0;
 }
 .img-header-container {
-  padding: 100px 0px 40px;
-}
+  width: 100%;
+  padding: 40px 0px 40px;
+  margin-top: 59px;
 
+  background-image: linear-gradient(to top, rgb(0, 0, 255), rgb(31, 31, 185));
+  border-bottom: 1px yellowgreen solid;
+}
 .middle-container {
   flex-wrap: nowrap;
   display: flex;
@@ -45,7 +49,6 @@ export default {
 .right-container {
   display: flex;
   flex-grow: 1;
-
   overflow: hidden;
   margin: 0px 20px 0px 10px;
   flex-wrap: wrap;

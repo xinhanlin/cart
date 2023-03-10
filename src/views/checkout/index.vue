@@ -143,7 +143,8 @@ export default {
 </script>
 <style scoped>
 .cartContentWrapper {
-  width: 100%;
+  height: 50vw;
+  height: 100%;
   font-size: 15px;
 }
 .cartwrapper {

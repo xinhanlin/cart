@@ -4,11 +4,8 @@
     <van-swipe
       :vertical="true"
       :autoplay="3000"
-      :boolean="false"
-      :touchable="0"
-      :indicator-color="none"
       lazy-render
-      style="height: 500px; width: 750px; object-fit: fill"
+      style="height: 500px; width: 750px"
     >
       <van-swipe-item v-for="(item, index) in img" :key="index">
         <img :src="item" />

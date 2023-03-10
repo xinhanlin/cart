@@ -54,8 +54,9 @@ button a {
   /* position: absolute;
   top: 0px;
   left: 0px; */
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 5px 5px 0px 0px;
   /* line-height: 58px; */
-  background-color: turquoise;
+  background-image: linear-gradient(to top, #0c5ddf, #00c8ff);
+  color: aliceblue;
 }
 </style>
