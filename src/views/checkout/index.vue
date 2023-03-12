@@ -38,11 +38,11 @@
             <div class="imgwrapper">
               <img class="img" :src="item.href" />
 
-              <router-link
+              <!-- <router-link
                 :to="item.no < 20 ? `/cake/${item.id}` : `/drink/${item.id}`"
                 class="detail"
                 >詳情</router-link
-              >
+              > -->
             </div>
             <div class="itemname">
               <span>{{ item.cartItem }}</span>

@@ -2,11 +2,12 @@ import { createRouter, createWebHashHistory } from "vue-router";
 
 import itemdetailCake from "../views/itemDetail/cake.vue";
 import itemdetailDrink from "../views/itemDetail/drink.vue";
-
+import checkout from "../views/checkout/index.vue";
 const router = createRouter({
   //模式
   history: createWebHashHistory(),
   linkActiveClass: "is-active",
+
   routes: [
     {
       path: "/pay",
@@ -19,7 +20,7 @@ const router = createRouter({
     {
       path: "/checkout",
 
-      component: () => import("../views/checkout/index.vue"),
+      component: checkout,
     },
     {
       path: "/finish",
@@ -59,6 +60,13 @@ const router = createRouter({
       component: import("../views/notFound.vue"),
     },
   ],
+  scrollBehavior(savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      return { top: 0 };
+    }
+  },
 });
 
 export default router;

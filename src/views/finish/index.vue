@@ -8,7 +8,7 @@
           <h2>請稍後等待</h2>
           <h2>
             有<span>{{ $store.state.nopay.length }}</span
-            >筆商品已存入您的下次再買訂單中
+            >筆商品已存入您的下次再買清單中
           </h2>
           <h2><router-link to="/" style="color: red">回到首頁</router-link></h2>
         </div>

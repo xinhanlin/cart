@@ -23,7 +23,7 @@ import { computed } from "vue";
 export default {
   setup() {
     const store = useStore();
-    //總旅遊總價格計算
+
     const all_price = computed(() => {
       let a = 0;
       for (let i = 0; i < store.state.cart.length; i++) {
