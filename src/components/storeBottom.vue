@@ -1,17 +1,23 @@
 <template>
-  <div class="storeBottom">
-    <div>contact us</div>
-    <div>email</div>
-    <div>address</div>
-    <div>phone</div>
-    <div>If you like this,please contact us.</div>
-    <div>We will call back soom.</div>
+  <div class="store-wrapper">
+    <div class="store-bottom">
+      <div>email:freeze1234576@gmail.com</div>
+      <div>phone:0903034213</div>
+      <div>address:xxxxxxxxxxxxxxxxxxxxxxx</div>
+    </div>
   </div>
 </template>
 <style scoped>
-.storeBottom {
-  height: 100%;
-  background-color: rgb(218, 225, 214);
-  margin-top: 80px;
+.store-wrapper {
+  background-image: linear-gradient(
+    to top,
+    rgb(190, 193, 215),
+    rgb(196, 199, 219)
+  );
+  line-height: 25px;
+  text-align: center;
+  overflow: hidden;
+  padding: 20px 0px 30px;
+  color: aliceblue;
 }
 </style>

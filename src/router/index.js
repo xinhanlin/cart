@@ -1,6 +1,8 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import checkout from "../views/checkout/index.vue";
-import finish from "../views/finish/index.vue";
+
+import itemdetailCake from "../views/itemDetail/cake.vue";
+import itemdetailDrink from "../views/itemDetail/drink.vue";
+
 const router = createRouter({
   //模式
   history: createWebHashHistory(),
@@ -17,11 +19,11 @@ const router = createRouter({
     {
       path: "/checkout",
 
-      component: checkout,
+      component: () => import("../views/checkout/index.vue"),
     },
     {
       path: "/finish",
-      component: finish,
+      component: () => import("../views/finish/index.vue"),
     },
     {
       path: "/",
@@ -41,13 +43,18 @@ const router = createRouter({
     },
 
     {
-      path: "/:no",
-      name: "itemdetail",
-      component: () => import("../views/itemDetail/index.vue"),
+      path: "/cake/:no(\\d+)",
+      name: "itemdetail-cake",
+      component: itemdetailCake,
+    },
+    {
+      path: "/drink/:no(\\d+)",
+      name: "itemdetail-drink",
+      component: itemdetailDrink,
     },
 
     {
-      path: "/:domain(.*)*",
+      path: "/:domain(.*)",
       name: "NotFound",
       component: import("../views/notFound.vue"),
     },

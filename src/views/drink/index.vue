@@ -1,11 +1,12 @@
 <template>
   <storeHeader class="store-header"></storeHeader>
   <imgHeaderContainer class="img-header-container"></imgHeaderContainer>
+  <div class="title"><span>飲料</span></div>
   <div class="middle-container">
     <!-- <leftContainer class="left-container"></leftContainer> -->
     <rightContainer class="right-container"></rightContainer>
   </div>
-  <storeBottom></storeBottom>
+  <storeBottom class="store-bottom"></storeBottom>
 </template>
 <script>
 import imgHeaderContainer from "./imgHeaderContainer.vue";
@@ -37,7 +38,15 @@ export default {
   margin-top: 59px;
 
   background-image: linear-gradient(to top, rgb(0, 0, 255), rgb(31, 31, 185));
-  border-bottom: 1px blue solid;
+  border-bottom: 2px yellowgreen solid;
+}
+.title {
+  width: 100%;
+  margin: 40px auto 20px;
+  font-size: 30px;
+  font-weight: 900;
+  text-align: center;
+  color: brown;
 }
 
 .middle-container {
@@ -57,5 +66,8 @@ export default {
   align-content: center;
   justify-content: center;
   border-radius: 20px;
+}
+.store-bottom {
+  border-top: 2px solid yellowgreen;
 }
 </style>

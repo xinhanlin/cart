@@ -1,12 +1,27 @@
 <template>
-  <div class="backgroud-color">
-    <router-view></router-view>
+  <div class="outer-wrapper">
+    <div class="backgroud-color">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 <script></script>
-<style>
+<style scoped>
+@media (min-width: 1400px) {
+  .outer-wrapper {
+    background-image: linear-gradient(to top, rgb(190, 193, 215), beige);
+  }
+  .backgroud-color {
+    width: 1400px;
+    margin: auto;
+    background-image: linear-gradient(to top, beige, #0084ff);
+  }
+}
 .backgroud-color {
   background-image: linear-gradient(to top, beige, #0084ff);
+}
+img {
+  max-width: 100%;
 }
 
 html,

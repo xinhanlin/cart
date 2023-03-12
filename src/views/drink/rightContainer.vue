@@ -14,8 +14,9 @@
         <li class="item-name">品名:{{ item.cartItem }}</li>
         <li class="item-price">價格:{{ item.price }}</li>
         <li class="item-bottom">
-          <router-link to="" class="item-detail">詳情</router-link>
-
+          <router-link :to="`/drink/${item.id}`" class="item-detail"
+            >詳情</router-link
+          >
           <div>
             <button
               v-if="storeCartNo.includes(item.no)"
@@ -89,14 +90,22 @@ export default {
   color: aliceblue;
 }
 .item-bottom {
-  display: flex;
-  justify-content: space-around;
+  position: relative;
+  height: 20px;
+}
+.item-detail {
+  position: absolute;
+  left: 5px;
+}
+.add-cart {
+  position: absolute;
+  right: 5px;
 }
 .item-detail,
 .add-cart {
   cursor: pointer;
   border-radius: 8px;
-  background-color: azure;
+  background-color: bisque;
   padding: 3px;
   border: 1px solid rgb(46, 45, 45);
 }
@@ -104,8 +113,8 @@ export default {
 .item-detail:hover {
   color: red;
 }
-
 .add-cart-delete {
-  background-color: bisque;
+  width: 88px;
+  background-color: azure;
 }
 </style>

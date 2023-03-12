@@ -28,7 +28,10 @@
   justify-content: left;
 }
 .content button {
+  position: relative;
+  width: 150px;
   height: 60px;
+
   display: block;
   margin-left: 0.8px;
   border: 2px solid gray;
@@ -42,21 +45,23 @@
 }
 
 .content button a:hover {
-  color: blue;
+  color: red;
 }
 button a {
-  display: flex;
-  align-items: center;
-  padding: 0 1.2rem;
-  height: 100%;
+  /* display: flex; */
+  /* align-items: center; */
+  display: block;
+  height: 30px;
+  line-height: 30px;
 }
 .is-active {
-  /* position: absolute;
-  top: 0px;
-  left: 0px; */
-  border-radius: 5px 5px 0px 0px;
-  /* line-height: 58px; */
+  width: 146px;
+  position: absolute;
+  top: 0;
+  left: 0;
   background-image: linear-gradient(to top, #0c5ddf, #00c8ff);
   color: aliceblue;
+  padding: 14px 0px;
+  border-radius: 7px 7px 0px 0px;
 }
 </style>

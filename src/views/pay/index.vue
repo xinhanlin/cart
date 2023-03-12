@@ -30,7 +30,7 @@
             style="zoom: 150%"
             type="checkbox"
             @click="allSelect"
-            v-model="all"
+            v-model="allchecked"
             class="checkbox"
           />
           &nbsp;全&nbsp;選&nbsp;/全&nbsp;不&nbsp;選
@@ -53,7 +53,12 @@
 
             <div class="imgwrapper">
               <img class="img" :src="item.href" />
-              <button class="detail">詳情</button>
+
+              <router-link
+                :to="item.no < 20 ? `/cake/${item.id}` : `/drink/${item.id}`"
+                class="itemdetail"
+                >詳情</router-link
+              >
             </div>
             <div class="itemname">
               <span>{{ item.cartItem }}</span>
@@ -93,39 +98,58 @@
       <Bottom></Bottom>
     </div>
   </div>
+  <storeBottom></storeBottom>
 </template>
 <script>
 import { useStore } from "vuex";
-import { reactive, toRefs } from "vue";
+import { computed } from "vue";
 import Header from "../../components/content.vue";
 import Content from "../../components/header.vue";
 import Bottom from "./bottom.vue";
-
+import storeBottom from "../../components/storeBottom.vue";
 export default {
   components: {
     Header,
     Content,
     Bottom,
+    storeBottom,
   },
   setup() {
     const store = useStore();
 
-    let data = reactive({
-      //全選/全不選勾選框的狀態
-      all: false,
+    const allchecked = computed({
+      get: () => {
+        return store.state.cart.every((item) => {
+          return item.checked == true;
+        });
+        // let a = true;
+        // store.state.cart.map(function (element) {
+        //   if (element.checked == false) {
+        //     a = false;
+        //   }
+        // });
+        // return a;
+      },
+      set: (value) => {
+        store.state.cart.forEach((element) => {
+          element.checked = value;
+        });
+      },
     });
-    //全選/全不選的勾選框
-    function allSelect() {
-      if (data.all == false) {
-        for (let i = 0; i < store.state.cart.length; i++) {
-          store.state.cart[i].checked = true;
-        }
-      } else {
-        for (let i = 0; i < store.state.cart.length; i++) {
-          store.state.cart[i].checked = false;
-        }
-      }
-    }
+
+    // 全選/全不選的勾選框
+    // function allSelect() {
+    //   if (allchecked == true) {
+    //     for (let i = 0; i < store.state.cart.length; i++) {
+    //       store.state.cart[i].checked = true;
+    //     }
+    //   } else {
+    //     for (let i = 0; i < store.state.cart.length; i++) {
+    //       store.state.cart[i].checked = false;
+    //     }
+    //   }
+    // }
+    //
 
     //監測當單一勾選框沒被選,全選變為沒被選
     // watch(,()=>{
@@ -153,8 +177,8 @@ export default {
     };
 
     return {
-      ...toRefs(data),
-      allSelect,
+      allchecked,
+      // allSelect,
 
       removepay,
       nopay,
@@ -236,6 +260,9 @@ export default {
     color: black;
     cursor: pointer;
   }
+  .itemname {
+    margin-top: 20px;
+  }
 }
 
 .topwrapper .a {
@@ -273,7 +300,7 @@ export default {
   flex-grow: 2;
   overflow: hidden;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   min-width: 20px;
   flex-wrap: wrap;
 }
@@ -283,10 +310,23 @@ export default {
   margin-right: 3px;
 }
 .imgwrapper {
+  display: flex;
+  flex-direction: column;
   flex-grow: 3;
 }
+.imgwrapper .itemdetail {
+  width: 40px;
+  margin: 8px auto 0px;
+  border-radius: 10px;
+  background-color: gainsboro;
+  border: 1px solid gray;
+}
 .itemdetailwrapper img {
-  height: 80px;
+  display: block;
+  margin: auto;
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
 }
 .itemdetailwrapper .detail {
   display: block;
@@ -304,7 +344,7 @@ export default {
   flex-grow: 3;
   flex-wrap: wrap;
   line-height: 20px;
-  height: 80px;
+
   font-size: 20px;
 }
 

@@ -2,9 +2,9 @@
   <!--結帳-->
   <div class="innerwrapper">
     <div class="leftbottom">
-      <router-link to="/pay">
+      <!-- <router-link to="/pay">
         <span style="color: red">訂購單</span></router-link
-      >
+      > -->
     </div>
   </div>
 </template>

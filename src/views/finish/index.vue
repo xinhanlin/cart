@@ -4,29 +4,24 @@
     <div class="cartwrapper">
       <div class="innerwrapper">
         <div class="middle">
-          <div class="finish">訂單已完成,即刻為您製作</div>
-          <br />
-          <h2>有{{ $store.state.nopay.length }}項商品已經保存至會員中</h2>
-          <router-link
-            to="/pay"
-            style="display: block; margin: 20px 0px 20px 0px"
-          >
-            <span style="color: red; font-size: 20px"
-              >返回我的購物單</span
-            ></router-link
-          >
-          <router-link to="/" style="display: block; margin: 20px 0px 20px 0px">
-            <span style="color: red; font-size: 20px"
-              >返回首頁</span
-            ></router-link
-          >
+          <h2>已收到您的訂單,正在為您製作</h2>
+          <h2>請稍後等待</h2>
+          <h2>
+            有<span>{{ $store.state.nopay.length }}</span
+            >筆商品已存入您的下次再買訂單中
+          </h2>
+          <h2><router-link to="/" style="color: red">回到首頁</router-link></h2>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
+// import storeBottom from "../../components/storeBottom.vue";
 export default {
+  components: {
+    // storeBottom,
+  },
   setup() {},
 };
 </script>
@@ -50,10 +45,10 @@ export default {
 .middle {
   margin: auto;
 }
-.finish {
-  margin-top: 30px;
-}
 h2 {
   margin-bottom: 20px;
+}
+h2 span {
+  color: red;
 }
 </style>
